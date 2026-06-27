@@ -7,8 +7,76 @@ import '../styles/global.css'
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body>
-    <slot />
+  <body class="min-h-screen grid grid-cols-[280px_1fr] bg-[#F5F0E0]" style="font-family: 'Caveat', cursive;">
+    
+    <!-- Sidebar -->
+    <aside class="min-h-screen bg-linear-to-b from-[#F6ED57] to-transparent flex flex-col items-start px-8 py-10 gap-6 relative">
+      
+      <div class="w-full mb-4 relative">
+        <!-- Leaves -->
+        <img 
+          src="../../public/leaves.png" 
+          alt="leaves decoration" 
+          class="absolute -top-10 -left-8 max-w-none w-[171%] pointer-events-none z-0"
+        />
+        
+        <!-- Logo -->
+        <img 
+          src="../../public/logo.png" 
+          alt="my logo" 
+          class="relative w-[120%] z-10 mx-auto"
+        />
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex flex-col mt-30 mx-auto">
+        <a href="/" class="text-[#867A26] text-xl hover:text-white transition-colors duration-200">
+          <img 
+            src="../../public/sprouticon.png" 
+            alt="home icon" 
+            class="inline-block w-8 h-8 mr-4"
+          />
+          <b>h o m e</b>
+        </a>
+        <a href="/portfolio" class="text-[#D09918] text-xl hover:text-white transition-colors duration-200">
+          <img 
+            src="../../public/sparkleicon.png" 
+            alt="portfolio icon" 
+            class="inline-block w-8 h-8 mr-4"
+          />  
+          <b>p o r t f o l i o</b>
+        </a>
+        <a href="/about" class="text-[#B78D4A] text-xl hover:text-white transition-colors duration-200">
+          <img 
+            src="../../public/breadicon.png" 
+            alt="about icon" 
+            class="inline-block w-8 h-8 mr-4"
+          />
+          <b>a b o u t</b>
+        </a>
+      </nav>
+
+      <!-- Contact at bottom -->
+      <div class="mt-auto">
+        <a href="/contact" class="text-[#5C4A1E] text-2xl hover:text-white transition-colors duration-200">
+          <img 
+            src="../../public/contact.png" 
+            alt="contact icon" 
+            class="inline-block w-50 h-50"
+          />
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="p-10">
+      <slot />
+    </main>
+
   </body>
 </html>
